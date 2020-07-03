@@ -15,6 +15,9 @@ namespace PopularMusic.com.popularmusic.view.components
 		public ConnectivityIndicator()
 		{
 			InitializeComponent();
+#if DEBUG
+			IsVisible = true;
+#endif
 		}
 	}
 }

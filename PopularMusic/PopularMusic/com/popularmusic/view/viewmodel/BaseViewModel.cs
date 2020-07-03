@@ -11,17 +11,14 @@ namespace PopularMusic.com.popularmusic.view.viewmodel
 {
 	public class BaseViewModel : INotifyPropertyChanged
 	{
-		private static bool _isOnline;
-		
 
 		protected IApiRequestExecutor apiRequestExecutor;
 
 		public bool IsOnline
 		{
-			get => _isOnline;
+			get => ConnectionManager.UseOnline;
 			set
 			{
-				_isOnline = value;
 				ConnectionManager.UseOnline = value;
 				RaisePropertyChanged(nameof(IsOnline));
 			}
@@ -56,7 +53,7 @@ namespace PopularMusic.com.popularmusic.view.viewmodel
 			apiRequestExecutor = new ApiRequestExecutor();
 
 			//set initial values
-			IsOnline = _isOnline;
+			IsOnline = ConnectionManager.UseOnline;
 
 			MessagingCenter.Subscribe<ConnectionManager, bool>(this, ConnectionManager.ConnectionChanged, (sender, message) =>
 			{
@@ -72,7 +69,7 @@ namespace PopularMusic.com.popularmusic.view.viewmodel
 					InternetColor = (Color)App.Current.Resources["NoInternet"];
 					State = "Disconnected";
 					//avoid state recalculation
-					_isOnline = false;
+					ConnectionManager.UseOnline = false;
 					RaisePropertyChanged(nameof(IsOnline));
 				}
 				Debug.WriteLine(message);

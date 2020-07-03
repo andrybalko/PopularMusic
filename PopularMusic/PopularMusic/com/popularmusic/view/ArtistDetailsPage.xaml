@@ -9,6 +9,8 @@
 	xmlns:model="clr-namespace:PopularMusic.com.popularmusic.model"
 	xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:components="clr-namespace:PopularMusic.com.popularmusic.view.components"
 	mc:Ignorable="d"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true"
 	x:DataType="vm:ArtistDetailsViewModel"
 	x:Class="PopularMusic.com.popularmusic.view.ArtistDetailsPage"
 	Title="{Binding Artist.Name}">

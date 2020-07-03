@@ -30,13 +30,6 @@ namespace PopularMusic.iOS
             LoadApplication(new App());
             ImageCircleRenderer.Init();
 
-            UIView statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
-            if (statusBar != null && statusBar.RespondsToSelector(new ObjCRuntime.Selector("setBackgroundColor:")))
-            {
-                Xamarin.Forms.Color color = (Xamarin.Forms.Color)App.Current.Resources["PrimaryColor"];
-                statusBar.BackgroundColor = color.ToUIColor();
-            }
-
             return base.FinishedLaunching(app, options);
         }
     }

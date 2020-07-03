@@ -8,6 +8,8 @@
 	xmlns:model="clr-namespace:PopularMusic.com.popularmusic.model"
 	xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
 	xmlns:components="clr-namespace:PopularMusic.com.popularmusic.view.components"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true"
 	mc:Ignorable="d"
 	Title="{Binding CurrentCountry, StringFormat='Top Artists for {0}'}"
 	x:DataType="vm:ArtistsListViewModel"
