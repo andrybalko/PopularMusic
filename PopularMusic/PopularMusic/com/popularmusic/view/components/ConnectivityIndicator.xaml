@@ -18,18 +18,6 @@
 			Padding="0">
 
 			<StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-                <StackLayout.IsVisible>
-                    <OnPlatform x:TypeArguments="x:Boolean">
-                        <OnPlatform.Platforms>
-                           <!--this stuff is disabled on Ios due to an error as explained here
-                            https://stackoverflow.com/a/62218134-->
-                            <On Platform="iOS" Value="False" />
-                            <On Platform="Android" Value="True" />
-                        </OnPlatform.Platforms>
-        </OnPlatform>
-                        
-                    
-                </StackLayout.IsVisible>
 				<Switch
 					IsToggled="{Binding IsOnline, Mode=TwoWay}" />
 				<Label Text="Use Online?" VerticalOptions="CenterAndExpand" />

@@ -17,6 +17,8 @@ namespace PopularMusic.com.popularmusic.view.components
 			InitializeComponent();
 #if DEBUG
 			IsVisible = true;
+#else
+			IsVisible = false;
 #endif
 		}
 	}

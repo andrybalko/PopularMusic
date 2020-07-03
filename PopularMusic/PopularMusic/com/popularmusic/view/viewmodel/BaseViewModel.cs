@@ -69,7 +69,7 @@ namespace PopularMusic.com.popularmusic.view.viewmodel
 					InternetColor = (Color)App.Current.Resources["NoInternet"];
 					State = "Disconnected";
 					//avoid state recalculation
-					ConnectionManager.UseOnline = false;
+					//ConnectionManager.UseOnline = false;
 					RaisePropertyChanged(nameof(IsOnline));
 				}
 				Debug.WriteLine(message);
