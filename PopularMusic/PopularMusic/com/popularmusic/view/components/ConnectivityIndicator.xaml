@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:vm="clr-namespace:PopularMusic.com.popularmusic.view.viewmodel"
+	xmlns:components="clr-namespace:PopularMusic.com.popularmusic.view.components"
+	mc:Ignorable="d"
+	x:DataType="vm:BaseViewModel"
+	x:Class="PopularMusic.com.popularmusic.view.components.ConnectivityIndicator">
+	<ContentView.Content>
+		<StackLayout
+			Orientation="Horizontal"
+			HeightRequest="30"
+			BackgroundColor="LightGray"
+			Margin="0"
+			Padding="0">
+
+			<StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+				<components:CustomSwitch
+					IsToggled="{Binding IsOnline, Mode=TwoWay}"
+					SwitchOnColor="Green"
+					SwitchOffColor="Gray" />
+				<Label Text="Use Online?" VerticalOptions="CenterAndExpand" />
+			</StackLayout>
+
+			<StackLayout
+				Orientation="Horizontal"
+				HorizontalOptions="CenterAndExpand"
+				VerticalOptions="CenterAndExpand">
+				<Frame
+					BackgroundColor="{Binding InternetColor}"
+					WidthRequest="10"
+					Padding="3"
+					HeightRequest="10"
+					CornerRadius="10"
+					HorizontalOptions="Center"
+					Margin="5" />
+				<Label
+					Text="{Binding State}"
+					HorizontalOptions="Center"
+					VerticalOptions="CenterAndExpand" />
+			</StackLayout>
+		</StackLayout>
+	</ContentView.Content>
+</ContentView>
